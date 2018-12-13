@@ -61,7 +61,12 @@ public:
 	virtual int getPoints(const Ice::Current&);
 
   void book_landing() {any_landing_ = true;}
+	void unbook_landing() {any_landing_ = false;}
   bool is_booked_landing() { return any_landing_;}
+
+	void book_terminal() {any_terminal_ = true;}
+	void unbook_terminal() {any_terminal_ = false;}
+  bool is_booked_terminal() { return any_terminal_;}
 
 private:
 
@@ -93,10 +98,10 @@ private:
 
 	float acum_;
 
-  bool any_landing_;
+  bool any_landing_ , any_terminal_;
 
 };
 
-};  // namespace atcsim
+}  // namespace atcsim
 
-#endif  // SIMULATOR_AIRPORT_H__
+#endif  // SIMULATOR_AIRPORT_H__ 

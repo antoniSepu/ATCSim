@@ -63,6 +63,7 @@ Airport::Airport() {
 	acum_ =  0;
 
   any_landing_ = false;
+	any_terminal_ = false;
 }
 
 Airport::~Airport() {
@@ -477,7 +478,6 @@ Airport::getFlights(const Ice::Current&)
 			Route r= (*itr);
 
 			ATCDisplay::ATCDPosition p;
-			p.name = r.pos.get_name();
 			p.x = r.pos.get_x();
 			p.y = r.pos.get_y();
 			p.z = r.pos.get_z();
@@ -487,7 +487,6 @@ Airport::getFlights(const Ice::Current&)
 
 		//std::cerr<<"C";
 		ATCDisplay::ATCDPosition fp;
-		fp.name = (*it)->getPosition().get_name();
 		fp.x = (*it)->getPosition().get_x();
 		fp.y = (*it)->getPosition().get_y();
 		fp.z = (*it)->getPosition().get_z();
@@ -559,7 +558,7 @@ Airport::getPoints(const Ice::Current&)
 	return points;
 }
 
-};  // namespace atcsim
+}  // namespace atcsim
 
 
 //void
