@@ -44,7 +44,7 @@ AirController::doWork()
 {
 			std::list<Flight*> flights = Airport::getInstance()->getFlights();
 			std::list<Flight*>::iterator it;
-			const float FranjaTerminal_x = 2000, FranjaTerminal_y = 1500;
+			const float FranjaTerminal_x = 1900, FranjaTerminal_y = 1500;
 			const float ZonaTerminal_x = 3500, ZonaTerminal_y = 3000;
 
 
@@ -381,6 +381,21 @@ AirController::doWork()
 							(*it)->getRoute()->push_back(ra2_3);
 							(*it)->getRoute()->push_back(ra2_4);
 
+						} else if (Airport::getInstance()->is_booked_landing()  &&
+							(*it)->getPosition().get_y() >= -4500) {
+							(*it)->getRoute()->push_back(rc2_1);
+							(*it)->getRoute()->push_back(rc2_2);
+							(*it)->getRoute()->push_back(rc2_3);
+							(*it)->getRoute()->push_back(rc2_4);
+							(*it)->getRoute()->push_back(rc2_5);
+							(*it)->getRoute()->push_back(rc2_6);
+							(*it)->getRoute()->push_back(rc2_7);
+							(*it)->getRoute()->push_back(rc2_8);
+							(*it)->getRoute()->push_back(rc2_9);
+							(*it)->getRoute()->push_back(rc2_10);
+							(*it)->getRoute()->push_back(rc2_11);
+							(*it)->getRoute()->push_back(rc2_re);
+
 						} else if (Airport::getInstance()->is_booked_landing()) {
 							(*it)->getRoute()->push_back(rc2_0);
 							(*it)->getRoute()->push_back(rc2_1);
@@ -415,6 +430,21 @@ AirController::doWork()
 							(*it)->getRoute()->push_back(ra3_2);
 							(*it)->getRoute()->push_back(ra3_3);
 							(*it)->getRoute()->push_back(ra3_4);
+
+						} else if (Airport::getInstance()->is_booked_landing() &&
+							(*it)->getPosition().get_y() <= 4500) {
+							(*it)->getRoute()->push_back(rc3_1);
+							(*it)->getRoute()->push_back(rc3_2);
+							(*it)->getRoute()->push_back(rc3_3);
+							(*it)->getRoute()->push_back(rc3_4);
+							(*it)->getRoute()->push_back(rc3_5);
+							(*it)->getRoute()->push_back(rc3_6);
+							(*it)->getRoute()->push_back(rc3_7);
+							(*it)->getRoute()->push_back(rc3_8);
+							(*it)->getRoute()->push_back(rc3_9);
+							(*it)->getRoute()->push_back(rc3_10);
+							(*it)->getRoute()->push_back(rc3_11);
+							(*it)->getRoute()->push_back(rc3_re);
 
 						} else if (Airport::getInstance()->is_booked_landing()) {
 							(*it)->getRoute()->push_back(rc3_0);
