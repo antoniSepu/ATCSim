@@ -28,6 +28,7 @@
 #include "Position.h"
 #include <list>
 #include <cmath>
+#include <fstream>
 
 namespace atcsim {
 
