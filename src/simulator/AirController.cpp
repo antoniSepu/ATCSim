@@ -44,8 +44,8 @@ AirController::doWork()
 {
 			std::list<Flight*> flights = Airport::getInstance()->getFlights();
 			std::list<Flight*>::iterator it;
-			const float FranjaTerminal_x = 1900, FranjaTerminal_y = 1500;
-			const float ZonaTerminal_x = 3500, ZonaTerminal_y = 3000;
+			const float FranjaTerminal_x = 1800, FranjaTerminal_y = 1500;
+			const float ZonaTerminal_x = 3700, ZonaTerminal_y = 3200;
 
 
 //Circuito sector 1
